@@ -1,0 +1,2 @@
+const prompts=["今晚最想吃的類型","最想收到的一句關心","下次約會最想做什麼","今天最累的時刻","最想一起完成的小事","最想聽對方說什麼","週末最想睡到幾點","最需要的療癒方式","最想去的散步地點","最想喝的飲料","最想看的短片類型","最想被怎麼稱呼"];
+export const GUESS_PARTNER_QUESTIONS=Array.from({length:60},(_,i)=>({id:`g-${i+1}`,text:`猜猜對方的「${prompts[i%prompts.length]}」${i>=prompts.length?`（第 ${i+1} 題）`:""}`,type:i%4===0?"text":"choice",options:["吃好料","抱抱","散步","休息"],keywords:["吃","抱","散步","休息","睡"]}));

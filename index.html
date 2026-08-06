@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f5e6d3">
+  <title>大爺與阡阡的生活遊樂場</title>
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/pages.css">
+  <link rel="stylesheet" href="./css/animations.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar"><button class="brand" data-route="home">大爺與阡阡的生活遊樂場</button><button id="theme-toggle" class="icon-button" aria-label="切換深色模式">◐</button></header>
+    <main id="app" aria-live="polite"></main>
+    <nav class="bottom-nav" aria-label="主要導覽">
+      <button data-route="home">⌂<span>首頁</span></button><button data-route="pending">◷<span>等待中</span></button>
+      <button data-route="history">▤<span>紀錄</span></button><button data-route="settings">⚙<span>設定</span></button>
+    </nav>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <div id="modal-root"></div>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

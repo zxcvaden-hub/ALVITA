@@ -1,0 +1,9 @@
+*.txt
+*.csv
+*.xlsx
+.env
+secrets.js
+private/
+line-chat/
+credentials.json
+.DS_Store

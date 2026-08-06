@@ -1,0 +1,2 @@
+export const MESSAGES={greetings:["今天也辛苦了，飯飯要記得吃。","哇噻，今天一起完成一件小事吧。","冷冷或累累時，先跟對方說一聲。","哈哈哈哈，今天的默契額度還沒用完。"],waiting:["對方還在認真思考，先不要催。","再等一下下，答案快出來了。","目前還不能偷看喔。","臭臭寶正在想一個很重要的答案。"],errors:{network:"目前無法連接共同資料庫，請檢查網路或 Apps Script 設定。",missingRoom:"這個房間不存在，可能連結不完整。",expired:"這個邀請已經過期。",duplicate:"你已經回答過囉。",hidden:"現在還不能偷看對方答案。",write:"資料暫時寫入失敗，請再試一次。"}};
+export const pick=items=>items[Math.floor(Math.random()*items.length)];

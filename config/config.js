@@ -1,0 +1,2 @@
+// 將 API_URL 換成 Apps Script「部署作業」頁面的 /exec 網址後會啟用正式模式。
+export const CONFIG={API_URL:"PASTE_YOUR_GOOGLE_APPS_SCRIPT_EXEC_URL_HERE",POLLING_INTERVAL:8000,ROOM_EXPIRE_HOURS:24,DEBUG:true};
