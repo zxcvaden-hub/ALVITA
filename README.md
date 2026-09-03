@@ -26,7 +26,7 @@
 1. 建立一份新的 Google 試算表，名稱例如「生活遊樂場私有資料」；**不要**把它設成公開或開啟「知道連結的任何人」。
 2. 在試算表選 **擴充功能 → Apps Script**，刪除預設內容。
 3. 開啟本專案的 `google-apps-script/Code-combined.gs`，完整複製貼上並儲存。
-4. 在函式下拉選單選 `setupSpreadsheet`，按執行。第一次依指示授權；完成後會建立 Users、Rooms、Answers、Results、History、ActivityData、Logs 工作表與欄位。
+4. 在函式下拉選單選 `setupSpreadsheet`，按執行。第一次依指示授權；完成後會建立 Users、Rooms、Answers、Results、History、ActivityData、Logs、LanyuMissions、LanyuBottles 工作表與欄位。既有工作表的 Header 必須完全符合程式預期；不符合時程式會停止並顯示錯誤，絕不自動清除或覆蓋資料。
 5. 在 Apps Script 選 **部署 → 新增部署作業 → 網頁應用程式**。執行身分選「我」，存取權請依你 Google 帳號可用的最小範圍設定：兩人都需使用時通常選「所有人」；資料仍由 Apps Script 以部署者權限存取，試算表本身保持私人。
 6. 按部署，複製結尾為 `/exec` 的網址。`/dev` 只供部署者登入測試，不可給 GitHub Pages 或另一支手機使用。
 7. 在 `config/config.js` 將 `API_URL` 的提示文字替換成完整 `/exec` 網址並重新推送 GitHub Pages。
