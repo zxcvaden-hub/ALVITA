@@ -1,4 +1,6 @@
 export const LANYU_WINDOW={start:"2026-09-03",end:"2026-09-11",timezone:"Asia/Taipei"};
+export const LANYU_CUSTOM_MISSION_ID="custom";
+export const LANYU_CUSTOM_MISSION_LIMIT=30;
 export const LANYU_DAYS=[
  {date:"2026-09-03",label:"9/3 🚆 出發",missions:[["d0903-a","💌","上車後跟我說一聲"],["d0903-b","📸","拍一張「旅程開始了」的照片"],["d0903-c","🎵","傳一首今晚坐車想聽的歌給我"]]},
  {date:"2026-09-04",label:"9/4 🌊 登島",missions:[["d0904-a","🐠","找一隻魚代表我"],["d0904-b","📸","拍今天看到最漂亮的東西"],["d0904-c","💌","上岸第一件事傳訊息給我"]]},

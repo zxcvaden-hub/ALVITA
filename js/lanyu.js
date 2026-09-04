@@ -1,4 +1,4 @@
-import {LANYU_WINDOW,getLanyuDay} from "../data/lanyu-missions.js";
+import {LANYU_WINDOW,LANYU_CUSTOM_MISSION_LIMIT,getLanyuDay} from "../data/lanyu-missions.js";
 import {CONFIG} from "../config/config.js";
 let lanyuPoller;
 export const taipeiDate=(date=new Date())=>new Intl.DateTimeFormat("en-CA",{timeZone:LANYU_WINDOW.timezone,year:"numeric",month:"2-digit",day:"2-digit"}).format(date);
@@ -7,3 +7,28 @@ export const lanyuStatus=(date=taipeiDate())=>{const start=Date.parse(`${LANYU_W
 export const currentLanyuDay=()=>getLanyuDay(taipeiDate());
 export const stopLanyuPolling=()=>{if(lanyuPoller)clearInterval(lanyuPoller);lanyuPoller=null;};
 export function startLanyuPolling(refresh){stopLanyuPolling();lanyuPoller=setInterval(()=>{if(!document.hidden)refresh().catch(error=>console.error("Lanyu refresh",error));},CONFIG.POLLING_INTERVAL);}
+export const countChars=text=>[...String(text??"")].length;
+export const normalizeLanyuDate=value=>{const match=String(value??"").match(/\d{4}-\d{2}-\d{2}/);return match?match[0]:"";};
+export function parseAction(value){
+  const raw=String(value??"");
+  const index=raw.indexOf(":");
+  return index<0?{kind:raw,arg:""}:{kind:raw.slice(0,index),arg:raw.slice(index+1)};
+}
+export function localLanyuShell(userId,cached){
+  const date=taipeiDate(),status=lanyuStatus(date),day=getLanyuDay(date)||{date,missions:[]};
+  return {
+    date,
+    day,
+    mission:cached?.mission||null,
+    bottle:cached?.bottle||{},
+    inbox:cached?.inbox||[],
+    stats:cached?.stats||{assigned:0,completed:0,received:0,progress:status.progress},
+    timeline:cached?.timeline||[],
+    user_id:userId
+  };
+}
+export function validateCustomMission(text){
+  const value=String(text??"").trim();
+  if(!value||countChars(value)>LANYU_CUSTOM_MISSION_LIMIT)throw new Error("自訂指令需介於 1 到 30 字。");
+  return value;
+}
