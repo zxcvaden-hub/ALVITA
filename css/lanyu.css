@@ -2,3 +2,8 @@
 .lanyu-turtle{display:block;width:min(28%,96px);max-width:100%;height:auto;margin:0 auto 8px}
 
 .lanyu-mission-card{margin:12px 0;padding:12px;border:1px dashed var(--line);border-radius:14px;background:var(--surface-2)}.lanyu-mission-card small{display:block;color:var(--muted);margin-bottom:6px}
+
+#lanyu-bottle-form{display:flex;flex-direction:column;gap:10px;width:100%;margin:8px 0 0}
+#lanyu-bottle-form textarea{display:block;width:100%;min-height:120px;resize:vertical;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--text);padding:12px 14px;line-height:1.5;box-sizing:border-box}
+#lanyu-bottle-form small{display:block;color:var(--muted);margin:0}
+#lanyu-bottle-form .button{margin:0}
